@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Bodoni Moda SC', serif;
+}
+
+/* App.css */
+
+h1 {
+  color: #FFDC92;
+  font-size: 64px;
+}
+
+h2 {
+  color: #FFDC92;
+  font-size: 48px;
+}
+
+h3 {
+  color: #FFDC92;
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  color: #FFDC92;
+  font-size: 20px;
+  text-align: center;
+}
