@@ -57,3 +57,37 @@
   #prod:hover {
     background-color: #F78FB3; /* Цвет фона при наведении (ещё светлее) */
   }
+
+
+  /* Большие экраны (от 992px до 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #prod {
+    margin-top: 0; /* Убираем отступ сверху */
+    position: relative; /* Относительное позиционирование */
+    top: -20px; /* Поднимаем кнопку на 20px */
+  }
+}
+
+/* Средние экраны (от 768px до 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #prod {
+    margin-top: 0; /* Убираем отступ сверху */
+    position: relative; /* Относительное позиционирование */
+    top: -30px; /* Поднимаем кнопку на 30px */
+  }
+}
+
+/* Мобильные экраны (до 767px) */
+@media (max-width: 767px) {
+  #prod {
+    margin-top: 0; /* Убираем отступ сверху */
+    position: relative; /* Относительное позиционирование */
+    top: -40px; /* Поднимаем кнопку на 40px */
+    align-self: center; /* Центрируем кнопку в контейнере */
+  }
+
+  .product .left-container {
+    display: none; /* Скрываем левый контейнер */
+  }
+  
+}

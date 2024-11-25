@@ -1,6 +1,7 @@
 .about-section {
     display: flex; /* Используем flexbox для разделения */
     height: 100vh; /* Высота секции на весь экран */
+    
   }
   
   /* Левая часть (розовый фон) */
@@ -31,5 +32,26 @@
   
   .about-section p{
     color: #000000;
+  }
+  
+  @media (max-width: 767px) {
+    .about-section {
+      flex-direction: column; /* Вертикальное расположение */
+    }
+  
+    .about-section .left-container {
+      display: none; /* Скрываем левый контейнер */
+    }
+  
+    .about-section .right-container {
+      display: flex; /* Включаем flexbox */
+      flex-direction: column; /* Располагаем элементы вертикально */
+      justify-content: center; /* Центрируем по вертикали */
+      align-items: center; /* Центрируем по горизонтали */
+      height: 100vh; /* Высота 100% видимого экрана */
+      padding: 10px 5px; /* Минимальные отступы */
+    }
+  
+    
   }
   

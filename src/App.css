@@ -5,13 +5,13 @@
   padding: 10px;
   background-color: #9A529B;
   color: #FFDC92;
-  position: fixed; /* Фиксирует шапку на экране */
-  top: 0; /* Привязывает шапку к верхней границе экрана */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%; /* Шапка растягивается на всю ширину окна */
-  z-index: 1000; /* Устанавливает приоритет отображения поверх других элементов */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляет тень для визуального отделения */
-  height: 40px; /* Устанавливаем высоту шапки 40px */
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 40px;
 }
 
 .nav {
@@ -22,7 +22,6 @@
   display: flex;
   list-style: none;
   gap: 100px;
-
 }
 
 .nav-list li {
@@ -35,5 +34,58 @@
   color: #00bcd4;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header {
+    height: 35px; /* Уменьшение высоты */
+    padding: 8px; /* Уменьшение отступов */
+  }
+
+  .nav-list {
+    gap: 50px; /* Уменьшение расстояния между элементами */
+  }
+
+  .nav-list li {
+    font-size: 14px; /* Уменьшение размера шрифта для ссылок */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    height: 30px; /* Еще меньше высота */
+    padding: 6px;
+  }
+
+  .nav-list {
+    gap: 30px;
+  }
+
+  .nav-list li {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
 
 
+  .header {
+    height:250px;
+    position: relative;
+  /* Позволяем высоте адаптироваться */
+    padding: 10px;
+    /* Элементы располагаются вертикально */
+  }
+
+  .nav {
+    flex-direction: column; /* Вертикальное расположение навигации */
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: column; /* Вертикальное расположение списка */
+    gap: 20px; /* Уменьшенное расстояние между пунктами */
+  }
+
+  .nav-list li {
+    font-size: 16px; /* Читаемый размер текста на мобильных устройствах */
+  }
+}

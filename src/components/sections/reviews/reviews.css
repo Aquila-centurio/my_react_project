@@ -1,5 +1,5 @@
 #reviews {
-    height: 100vh;
+    height: auto;
     background-color: #e4c4e5; /* Светлый фон */
     color: #000; /* Чёрный текст */
     padding: 20px;
@@ -147,4 +147,29 @@
   
   .modal-buttons .close-button:hover {
     background-color: #bbb;
+  }
+
+
+
+  
+  /* Мобильные экраны (до 767px) */
+  @media (max-width: 767px) {
+    #reviews button {
+      margin-top: 0; /* Убираем отступ сверху */
+      position: relative; /* Относительное позиционирование */
+
+      align-self: center; /* Центрируем кнопку в контейнере */
+    }
+  
+    /* Отзывы в один столбец */
+    .reviews-container {
+      grid-template-columns: 1fr; /* Одна колонка */
+      gap: 20px; /* Уменьшаем расстояние между отзывами */
+    }
+
+      .review:nth-child(even),
+  .review:nth-child(odd) {
+    transform: none; /* Убираем трансформацию */
+  }
+  
   }

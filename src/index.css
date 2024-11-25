@@ -27,3 +27,57 @@ p {
   font-size: 20px;
   text-align: center;
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  h1 {
+    font-size: 56px; /* Уменьшено для более комфортного просмотра */
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 48px; /* Значительное уменьшение для планшетов */
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 36px; /* Для небольших экранов смартфонов */
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

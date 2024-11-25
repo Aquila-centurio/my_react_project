@@ -1,7 +1,7 @@
 /* Основная секция */
 #contacts {
     display: flex; /* Используем flexbox для разделения */
-    height: 100vh; /* Высота секции на весь экран */
+    height: auto; /* Высота секции на весь экран */
   }
   
   /* Левая часть (фиолетовый фон) */
@@ -108,5 +108,20 @@
     font-size: 12px;
     display: block;
     margin-top: 5px;
+  }
+  
+
+  @media (max-width: 767px) {
+    #contacts {
+      flex-direction: column; /* Размещаем элементы по вертикали */
+    }
+  
+    .left-container {
+      order: 1; /* Левая часть будет сверху */
+    }
+  
+    .right-container {
+      order: 2; /* Правая часть будет снизу */
+    }
   }
   
