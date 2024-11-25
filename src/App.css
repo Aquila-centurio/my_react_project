@@ -257,7 +257,7 @@ form label {
 /* Кнопка отправки */
 form button {
   padding: 15px 30px; /* Увеличенные отступы */
-  background-color: #7c767b; /* Светло-розовый фон */
+  background-color: #9A529B; /* Светло-розовый фон */
   color: #FFFFFF; /* Белый текст */
   border: none; /* Убираем рамку */
   border-radius: 50px; /* Скругление углов */
@@ -278,4 +278,161 @@ form button:hover {
   margin-top: -10px; /* Сдвигаем ошибку ближе к полю */
   text-align: left; /* Ошибка выровнена слева */
 }
+
+/*---- Отзывы ------*/
+
+/* Основной стиль секции */
+/* Основной стиль секции */
+#reviews {
+  height: 100vh;
+  background-color: #e4c4e5; /* Светлый фон */
+  color: #000; /* Чёрный текст */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Заголовок */
+#reviews h1 {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#review p {
+  color: #000;
+}
+
+/* Контейнер отзывов */
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две колонки */
+  gap: 40px; /* Расстояние между отзывами */
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px; /* Растянуть по ширине */
+  width: 100%;
+}
+
+/* Стили для отзывов */
+.review {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 20px; /* Внутренние отступы */
+  box-sizing: border-box;
+  
+  border-radius: 10px; /* Скругление */
+  
+}
+
+/* Перевернутый шахматный порядок */
+.review:nth-child(even) {
+  transform: translateY(30px); /* Опустить чётные элементы */
+}
+
+.review:nth-child(odd) {
+  transform: translateY(-30px); /* Поднять нечётные элементы */
+}
+
+#reviews button {
+  margin-top: 100px; /* Увеличено расстояние сверху */
+  padding: 22.5px 80px; /* Высота увеличена в 1.5 раза, ширина в 2 раза */
+  background-color: #EB86D5; /* Розовая кнопка */
+  color: #fff; /* Белый текст */
+  border: none;
+  border-radius: 50px; /* Скругление 50 */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#reviews button:hover {
+  background-color: #F78FB3; /* Светлее при наведении */
+}
+
+
+#reviews p {
+  color: #000;
+}
+
+
+
+
+/*------------ Модальное ----------*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.modal textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons .submit-button {
+  background-color: #EB86D5;
+  color: white;
+  border: none;
+}
+
+.modal-buttons .submit-button:hover {
+  background-color: #F78FB3;
+}
+
+.modal-buttons .close-button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+}
+
+.modal-buttons .close-button:hover {
+  background-color: #bbb;
+}
+
+/*----- Контакты ------*/
 
