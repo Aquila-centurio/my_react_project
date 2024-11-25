@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import './reviews.css'
+import './reviews.css';
 
 const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [review, setReview] = useState('');
+  const [name, setName] = useState('');
 
   const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setReview('');
+    setName('');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Спасибо за ваш отзыв: "${review}"`);
+    alert(`Спасибо, ${name}, за ваш отзыв: "${review}"`);
     setReview('');
+    setName('');
     setIsModalOpen(false);
   };
 
@@ -44,6 +51,13 @@ const Reviews = () => {
           <div className="modal">
             <h2>Оставьте отзыв</h2>
             <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
               <textarea
                 placeholder="Напишите ваш отзыв здесь..."
                 value={review}
