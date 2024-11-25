@@ -1,0 +1,39 @@
+#main {
+  position: relative;
+  height: 100vh;
+  background-image: url('../../../img/pinaple_1.avif'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden; /* Убедитесь, что псевдоэлемент виден */
+}
+
+#main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+  z-index: 0; /* Убедитесь, что затемнение находится под текстом */
+}
+
+#main h1,
+#main p {
+  position: relative;
+  z-index: 1; /* Текст должен находиться над затемнением */
+}
+
+#main h1 {
+  text-align: center;
+  margin-top: 20%;
+}
+
+#main p {
+  margin-bottom: 90px;
+}

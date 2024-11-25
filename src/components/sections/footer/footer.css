@@ -1,0 +1,14 @@
+#footer {
+    background-color: #432543; /* Розовый фон */
+     /* Белый текст */
+    height: 50px; /* Высота секции 50px */
+    display: flex;
+    justify-content: center; /* Выравнивание текста по центру по горизонтали */
+    align-items: center; /* Выравнивание текста по центру по вертикали */
+  }
+  
+ #footer h3 {
+    color: white;
+    margin: 0; /* Убирает отступы у заголовка */
+  }
+  

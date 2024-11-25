@@ -1,0 +1,72 @@
+.order {
+    background-color: #FFFFFF; /* Белый фон */
+    color: #000000; /* Черный текст */
+    padding: 50px; /* Отступы внутри секции */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    text-align: center; /* Центрирование текста */
+    min-height: 100vh; /* Высота секции не менее высоты экрана */
+    box-sizing: border-box; /* Включаем отступы в расчет ширины */
+  }
+  
+  /* Заголовок секции */
+  .order h2 {
+    margin-bottom: 40px; /* Отступ снизу */
+    color: #000000;
+  }
+  
+  /* Формы */
+  form {
+    width: 100%; /* Форма растягивается на 100% ширины родителя */
+    max-width: 600px; /* Ограничиваем максимальную ширину */
+    display: flex;
+    flex-direction: column; /* Поля идут в колонку */
+    gap: 20px; /* Расстояние между полями */
+    text-align: left; /* Подписи выровнены слева */
+  }
+  
+  /* Общие стили для полей ввода */
+  form input, form select {
+    width: 100%; /* Поля растягиваются на всю ширину формы */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Серый контур */
+    border-radius: 5px; /* Легкое скругление углов */
+    background-color: #f0f0f0; /* Светло-серый фон */
+    box-sizing: border-box; /* Включаем отступы в расчет ширины */
+  }
+  
+  /* Подписи для полей */
+  form label {
+    font-weight: bold; /* Жирный текст */
+    text-align: center;
+    display: block;
+    margin-bottom: 5px; /* Отступ снизу */
+  }
+  
+  /* Кнопка отправки */
+  form button {
+    padding: 15px 30px; /* Увеличенные отступы */
+    background-color: #9A529B; /* Светло-розовый фон */
+    color: #FFFFFF; /* Белый текст */
+    border: none; /* Убираем рамку */
+    border-radius: 50px; /* Скругление углов */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Указываем, что это кнопка */
+    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+  }
+  
+  /* Кнопка при наведении */
+  form button:hover {
+    background-color: #dfa1b6; /* Более светлый розовый цвет */
+  }
+  
+  /* Ошибки валидации */
+  .error {
+    color: red; /* Красный текст */
+    font-size: 12px; /* Размер шрифта */
+    margin-top: -10px; /* Сдвигаем ошибку ближе к полю */
+    text-align: left; /* Ошибка выровнена слева */
+  }
+  

@@ -1,0 +1,112 @@
+/* Основная секция */
+#contacts {
+    display: flex; /* Используем flexbox для разделения */
+    height: 100vh; /* Высота секции на весь экран */
+  }
+  
+  /* Левая часть (фиолетовый фон) */
+  .left-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #82497a; /* Фиолетовый фон */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    padding: 20px;
+    color: #fff;
+    
+    line-height: 1.8;
+  }
+
+  .left-container h1 {
+   
+    color: #fff;
+  }
+  
+  /* Стили текста в левой части */
+  .contact-info p {
+    margin: 10px 0;
+    color: #fff;
+  }
+  
+  .contact-info .bold {
+    font-weight: bold;
+  }
+  
+  /* Правая часть (белый фон) */
+  .right-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #fff; /* Белый фон */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    color: #000; /* Чёрный текст */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Заголовок */
+  .right-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000;
+  }
+  
+  /* Стили формы */
+  .right-container form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right-container label {
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 20px
+  }
+  
+  .right-container input,
+  .right-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .right-container textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  /* Стили кнопки */
+  .right-container button {
+    margin-top: 20px;
+    padding: 20px 40px; /* Увеличенные отступы для кнопки */
+    background-color: #EB86D5; /* Розовый цвет */
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Скругленные углы */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+  }
+  
+  .right-container button:hover {
+    background-color: #F78FB3; /* Светлее при наведении */
+  }
+  
+  .error-input {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+  }
+  

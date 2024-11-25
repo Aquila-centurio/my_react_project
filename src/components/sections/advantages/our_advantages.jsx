@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './advantages.css'
 const OurAdvantages = () => (
   <section id="our_advantages" className='our-advantages-section'>
     <h1>Почему мы?</h1>

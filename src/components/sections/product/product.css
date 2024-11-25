@@ -1,0 +1,59 @@
+/* Основная секция */
+#product {
+    display: flex; /* Используем flexbox для разделения */
+    height: 100vh; /* Высота секции на весь экран */
+  }
+  
+  /* Левая часть (белый фон) */
+  .product .left-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #FFFFFF; /* Белый фон */
+    display: flex;
+    justify-content: center; /* Центрируем изображение по горизонтали */
+    align-items: center; /* Центрируем изображение по вертикали */
+    padding: 20px;
+  }
+  
+  /* Правая часть (розовый фон) */
+  .product .right-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #9A529B; /* Светло-розовый фон */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    color: white; /* Белый цвет текста */
+    padding: 20px;
+    box-sizing: border-box; /* Включаем padding в расчёт ширины */
+  }
+  
+  /* Заголовок */
+  .product .right-container h1 {
+    color: white;
+    margin-bottom: 50px; /* Отступ между заголовком и параграфом */
+    text-align: center; /* Центрируем текст по горизонтали */
+  }
+  
+  /* Параграф */
+  .product .right-container p {
+    color: white;
+    margin-bottom: 50px; /* Отступ снизу */
+    text-align: center; /* Центрируем текст по горизонтали */
+    line-height: 1.6; /* Удобочитаемый межстрочный интервал */
+  }
+  
+  /* Кнопка */
+  #prod {
+    background-color: #EB86D5; /* Розовый, светлее */
+    color: white; /* Белый цвет текста */
+    border: none; /* Без рамки */
+    padding: 20px 40px; /* Увеличенные отступы для кнопки */
+    font-size: 18px; /* Размер шрифта */
+    border-radius: 50px; /* Скругление углов */
+    cursor: pointer; /* Курсор в виде руки */
+    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
+  }
+  
+  #prod:hover {
+    background-color: #F78FB3; /* Цвет фона при наведении (ещё светлее) */
+  }

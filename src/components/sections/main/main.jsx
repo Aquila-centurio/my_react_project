@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './main.css'
 const Main = () => (
   <section id="main">
     <h1>Фрукт экзотический <br />Вкус фееричский! </h1>

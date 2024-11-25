@@ -1,0 +1,35 @@
+.about-section {
+    display: flex; /* Используем flexbox для разделения */
+    height: 100vh; /* Высота секции на весь экран */
+  }
+  
+  /* Левая часть (розовый фон) */
+  .about-section .left-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #9A529B; /* Розовый фон */
+    display: flex;
+    justify-content: center; /* Центрируем текст по горизонтали */
+    align-items: center; /* Центрируем текст по вертикали */
+    color: white; /* Белый цвет текста */
+    padding: 20px;
+  }
+  
+  /* Правая часть (белый фон) */
+  .about-section .right-container {
+    flex: 1; /* Занимает 50% ширины */
+    background-color: #FFFFFF; /* Белый фон */
+    display: flex;
+    justify-content: center; /* Центрируем текст по горизонтали */
+    align-items: center; /* Центрируем текст по вертикали */
+    padding: 20px;
+  }
+  
+  
+  .about-section h1{
+    color: #ffffff;
+  }
+  
+  .about-section p{
+    color: #000000;
+  }
+  

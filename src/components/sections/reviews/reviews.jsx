@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './reviews.css'
 
 const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
