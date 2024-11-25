@@ -36,22 +36,22 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .header {
-    height: 35px; /* Уменьшение высоты */
-    padding: 8px; /* Уменьшение отступов */
+    height: 35px; 
+    padding: 8px; 
   }
 
   .nav-list {
-    gap: 50px; /* Уменьшение расстояния между элементами */
+    gap: 50px; 
   }
 
   .nav-list li {
-    font-size: 14px; /* Уменьшение размера шрифта для ссылок */
+    font-size: 14px; 
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
-    height: 30px; /* Еще меньше высота */
+    height: 30px; 
     padding: 6px;
   }
 
@@ -70,22 +70,21 @@
   .header {
     height:250px;
     position: relative;
-  /* Позволяем высоте адаптироваться */
     padding: 10px;
-    /* Элементы располагаются вертикально */
+   
   }
 
   .nav {
-    flex-direction: column; /* Вертикальное расположение навигации */
+    flex-direction: column; 
     align-items: center;
   }
 
   .nav-list {
-    flex-direction: column; /* Вертикальное расположение списка */
-    gap: 20px; /* Уменьшенное расстояние между пунктами */
+    flex-direction: column; 
+    gap: 20px; 
   }
 
   .nav-list li {
-    font-size: 16px; /* Читаемый размер текста на мобильных устройствах */
+    font-size: 16px; 
   }
 }

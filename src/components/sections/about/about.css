@@ -1,57 +1,97 @@
+/* Анимация для появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Основная секция */
 .about-section {
-    display: flex; /* Используем flexbox для разделения */
-    height: 100vh; /* Высота секции на весь экран */
-    
+  display: flex;
+  height: 100vh;
+}
+
+/* Левая часть (розовый фон) */
+.about-section .left-container {
+  flex: 1;
+  background-color: #9A529B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Правая часть (белый фон) */
+.about-section .right-container {
+  flex: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0; /* Скрываем изначально */
+  transform: translateY(20px); /* Сдвигаем вниз */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Когда секция видна */
+.about-section.visible .right-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Заголовок */
+.about-section h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+.about-section p {
+  color: #000000;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.about-section.visible p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.transition-header:hover {
+  transform: scale(1.1);
+  filter: brightness(0.9);
+}
+
+
+@media (max-width: 767px) {
+  .about-section {
+    flex-direction: column;
   }
-  
-  /* Левая часть (розовый фон) */
+
   .about-section .left-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #9A529B; /* Розовый фон */
-    display: flex;
-    justify-content: center; /* Центрируем текст по горизонтали */
-    align-items: center; /* Центрируем текст по вертикали */
-    color: white; /* Белый цвет текста */
-    padding: 20px;
+    display: none;
   }
-  
-  /* Правая часть (белый фон) */
+
   .about-section .right-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #FFFFFF; /* Белый фон */
     display: flex;
-    justify-content: center; /* Центрируем текст по горизонтали */
-    align-items: center; /* Центрируем текст по вертикали */
-    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px 5px;
   }
-  
-  
-  .about-section h1{
-    color: #ffffff;
-  }
-  
-  .about-section p{
-    color: #000000;
-  }
-  
-  @media (max-width: 767px) {
-    .about-section {
-      flex-direction: column; /* Вертикальное расположение */
-    }
-  
-    .about-section .left-container {
-      display: none; /* Скрываем левый контейнер */
-    }
-  
-    .about-section .right-container {
-      display: flex; /* Включаем flexbox */
-      flex-direction: column; /* Располагаем элементы вертикально */
-      justify-content: center; /* Центрируем по вертикали */
-      align-items: center; /* Центрируем по горизонтали */
-      height: 100vh; /* Высота 100% видимого экрана */
-      padding: 10px 5px; /* Минимальные отступы */
-    }
-  
-    
-  }
-  
+}

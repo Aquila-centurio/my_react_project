@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  overflow: hidden; /* Убедитесь, что псевдоэлемент виден */
+  overflow: hidden; 
 }
 
 #main::after {
@@ -20,22 +20,52 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6); /* Затемнение фона */
-  z-index: 0; /* Убедитесь, что затемнение находится под текстом */
+  z-index: 0; 
 }
 
 #main h1,
 #main p {
   position: relative;
-  z-index: 1; /* Текст должен находиться над затемнением */
+  z-index: 1; 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #main h1 {
+  animation: pulse 2s;
   text-align: center;
   margin-top: 20%;
 }
 
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 #main p {
   margin-bottom: 90px;
+  animation: slideIn 2s;
 }
+
+
+
+
 
 

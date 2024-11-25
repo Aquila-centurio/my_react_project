@@ -1,28 +1,40 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .our-advantages-section {
-    display: flex; /* Используем flexbox для разделения */
-    height: 100vh; /* Высота секции на весь экран */
-    background-color: #e4c4e5; /* Цвет фона */
-    display: flex; /* Используем flexbox */
-    flex-direction: column; /* Элементы внутри расположены в колонку */
-    justify-content: center; /* Выравнивание по вертикали */
-    align-items: center; /* Выравнивание по горизонтали */
-    text-align: center; /* Центрирование текста по горизонтали */
-    box-sizing: border-box; /* Включаем отступы в расчёт ширины */
-  }
-  
-  /* Стили для заголовка */
-  .our-advantages-section h1 {
-    color: #000000;
-    margin: 0; /* Убираем отступы */
-    margin-bottom: 50px; /* Отступ снизу для разделения с подзаголовком */
-    
-  }
-  
-  /* Стили для подзаголовка */
-  .our-advantages-section h3 {
-    color: #000000;
-    
-    margin: 0; /* Убираем отступы */
-    line-height: 1.6; /* Межстрочный интервал для удобочитаемости */
-    
-  }
+  display: flex;
+  height: 100vh;
+  background-color: #e4c4e5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 0; 
+  transition: opacity 0.3s ease-out; 
+}
+
+.our-advantages-section.animate {
+  opacity: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.our-advantages-section h1 {
+  color: #000000;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.our-advantages-section h3 {
+  color: #000000;
+  margin: 0;
+  line-height: 1.6;
+}

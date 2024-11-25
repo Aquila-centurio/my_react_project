@@ -1,16 +1,15 @@
-/* Основная секция */
+
 #contacts {
-    display: flex; /* Используем flexbox для разделения */
-    height: auto; /* Высота секции на весь экран */
+    display: flex; 
+    height: auto; 
   }
   
-  /* Левая часть (фиолетовый фон) */
   .left-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #82497a; /* Фиолетовый фон */
+    flex: 1; 
+    background-color: #82497a; 
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-    align-items: center; /* Центрируем содержимое по вертикали */
+    justify-content: center; 
+    align-items: center; 
     padding: 20px;
     color: #fff;
     
@@ -22,7 +21,6 @@
     color: #fff;
   }
   
-  /* Стили текста в левой части */
   .contact-info p {
     margin: 10px 0;
     color: #fff;
@@ -32,20 +30,19 @@
     font-weight: bold;
   }
   
-  /* Правая часть (белый фон) */
   .right-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #fff; /* Белый фон */
+    flex: 1; 
+    background-color: #fff;
     display: flex;
-    flex-direction: column; /* Располагаем элементы по вертикали */
-    justify-content: center; /* Центрируем содержимое по вертикали */
-    align-items: center; /* Центрируем содержимое по горизонтали */
-    color: #000; /* Чёрный текст */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #000; 
     padding: 20px;
     box-sizing: border-box;
   }
   
-  /* Заголовок */
+
   .right-container h1 {
     margin-bottom: 20px;
     text-align: center;
@@ -85,18 +82,18 @@
   /* Стили кнопки */
   .right-container button {
     margin-top: 20px;
-    padding: 20px 40px; /* Увеличенные отступы для кнопки */
-    background-color: #EB86D5; /* Розовый цвет */
+    padding: 20px 40px; 
+    background-color: #EB86D5; 
     color: #fff;
     border: none;
-    border-radius: 50px; /* Скругленные углы */
+    border-radius: 50px; 
     cursor: pointer;
     font-size: 18px;
-    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+    transition: background-color 0.3s ease; 
   }
   
   .right-container button:hover {
-    background-color: #F78FB3; /* Светлее при наведении */
+    background-color: #F78FB3; 
   }
   
   .error-input {
@@ -113,15 +110,15 @@
 
   @media (max-width: 767px) {
     #contacts {
-      flex-direction: column; /* Размещаем элементы по вертикали */
+      flex-direction: column; 
     }
   
     .left-container {
-      order: 1; /* Левая часть будет сверху */
+      order: 1; 
     }
   
     .right-container {
-      order: 2; /* Правая часть будет снизу */
+      order: 2; 
     }
   }
   

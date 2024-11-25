@@ -6,7 +6,7 @@ const Order = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    // Имитация отправки данных
+   
     alert(
       `Данные заказа:\n` +
       `Имя: ${data.firstName}\n` +

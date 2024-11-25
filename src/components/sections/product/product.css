@@ -1,93 +1,125 @@
-/* Основная секция */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 #product {
-    display: flex; /* Используем flexbox для разделения */
-    height: 100vh; /* Высота секции на весь экран */
-  }
-  
-  /* Левая часть (белый фон) */
-  .product .left-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #FFFFFF; /* Белый фон */
-    display: flex;
-    justify-content: center; /* Центрируем изображение по горизонтали */
-    align-items: center; /* Центрируем изображение по вертикали */
-    padding: 20px;
-  }
-  
-  /* Правая часть (розовый фон) */
-  .product .right-container {
-    flex: 1; /* Занимает 50% ширины */
-    background-color: #9A529B; /* Светло-розовый фон */
-    display: flex;
-    flex-direction: column; /* Располагаем элементы по вертикали */
-    justify-content: center; /* Центрируем содержимое по вертикали */
-    align-items: center; /* Центрируем содержимое по горизонтали */
-    color: white; /* Белый цвет текста */
-    padding: 20px;
-    box-sizing: border-box; /* Включаем padding в расчёт ширины */
-  }
-  
-  /* Заголовок */
-  .product .right-container h1 {
-    color: white;
-    margin-bottom: 50px; /* Отступ между заголовком и параграфом */
-    text-align: center; /* Центрируем текст по горизонтали */
-  }
-  
-  /* Параграф */
-  .product .right-container p {
-    color: white;
-    margin-bottom: 50px; /* Отступ снизу */
-    text-align: center; /* Центрируем текст по горизонтали */
-    line-height: 1.6; /* Удобочитаемый межстрочный интервал */
-  }
-  
-  /* Кнопка */
-  #prod {
-    background-color: #EB86D5; /* Розовый, светлее */
-    color: white; /* Белый цвет текста */
-    border: none; /* Без рамки */
-    padding: 20px 40px; /* Увеличенные отступы для кнопки */
-    font-size: 18px; /* Размер шрифта */
-    border-radius: 50px; /* Скругление углов */
-    cursor: pointer; /* Курсор в виде руки */
-    transition: background-color 0.3s ease; /* Плавное изменение фона при наведении */
-  }
-  
-  #prod:hover {
-    background-color: #F78FB3; /* Цвет фона при наведении (ещё светлее) */
-  }
+  display: flex;
+  height: 100vh;
+  animation: fadeInUp 1s ease-out;
+}
 
 
-  /* Большие экраны (от 992px до 1199px) */
+.product .left-container {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0; 
+  animation: fadeInImage 1.5s ease-out forwards; 
+}
+
+
+.product .right-container {
+  flex: 1;
+  background-color: #9a529b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0; 
+  animation: fadeInUp 1s ease-out 0.5s forwards; 
+}
+
+.product.visible .right-container {
+  opacity: 1;
+}
+
+
+.product .right-container h1 {
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  opacity: 0; 
+  animation: fadeInUp 1s ease-out 1s forwards; 
+}
+
+
+.product .right-container p {
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.5s forwards; 
+}
+
+
+#prod {
+  background-color: #eb86d5;
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#prod:hover {
+  background-color: #f78fb3;
+}
+
+
 @media (min-width: 992px) and (max-width: 1199px) {
   #prod {
-    margin-top: 0; /* Убираем отступ сверху */
-    position: relative; /* Относительное позиционирование */
-    top: -20px; /* Поднимаем кнопку на 20px */
+    margin-top: 0;
+    position: relative;
+    top: -20px;
   }
 }
 
-/* Средние экраны (от 768px до 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   #prod {
-    margin-top: 0; /* Убираем отступ сверху */
-    position: relative; /* Относительное позиционирование */
-    top: -30px; /* Поднимаем кнопку на 30px */
+    margin-top: 0;
+    position: relative;
+    top: -30px;
   }
 }
 
-/* Мобильные экраны (до 767px) */
 @media (max-width: 767px) {
   #prod {
-    margin-top: 0; /* Убираем отступ сверху */
-    position: relative; /* Относительное позиционирование */
-    top: -40px; /* Поднимаем кнопку на 40px */
-    align-self: center; /* Центрируем кнопку в контейнере */
+    margin-top: 0;
+    position: relative;
+    top: -40px;
+    align-self: center;
   }
 
   .product .left-container {
-    display: none; /* Скрываем левый контейнер */
+    display: none; 
   }
-  
 }

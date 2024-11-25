@@ -1,72 +1,67 @@
 .order {
-    background-color: #FFFFFF; /* Белый фон */
-    color: #000000; /* Черный текст */
-    padding: 50px; /* Отступы внутри секции */
+    background-color: #FFFFFF; 
+    color: #000000; 
+    padding: 50px; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрирование по горизонтали */
-    justify-content: center; /* Центрирование по вертикали */
-    text-align: center; /* Центрирование текста */
-    min-height: 100vh; /* Высота секции не менее высоты экрана */
-    box-sizing: border-box; /* Включаем отступы в расчет ширины */
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    min-height: 100vh; 
+    box-sizing: border-box; 
   }
   
-  /* Заголовок секции */
+  
   .order h2 {
-    margin-bottom: 40px; /* Отступ снизу */
+    margin-bottom: 40px; 
     color: #000000;
   }
   
-  /* Формы */
   form {
-    width: 100%; /* Форма растягивается на 100% ширины родителя */
-    max-width: 600px; /* Ограничиваем максимальную ширину */
+    width: 100%; 
+    max-width: 600px; 
     display: flex;
-    flex-direction: column; /* Поля идут в колонку */
-    gap: 20px; /* Расстояние между полями */
-    text-align: left; /* Подписи выровнены слева */
+    flex-direction: column; 
+    gap: 20px; 
+    text-align: left; 
   }
   
-  /* Общие стили для полей ввода */
+
   form input, form select {
-    width: 100%; /* Поля растягиваются на всю ширину формы */
-    padding: 10px; /* Внутренние отступы */
-    border: 1px solid #ccc; /* Серый контур */
-    border-radius: 5px; /* Легкое скругление углов */
-    background-color: #f0f0f0; /* Светло-серый фон */
-    box-sizing: border-box; /* Включаем отступы в расчет ширины */
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f0f0f0; 
+    box-sizing: border-box; 
   }
-  
-  /* Подписи для полей */
+
   form label {
-    font-weight: bold; /* Жирный текст */
+    font-weight: bold; 
     text-align: center;
     display: block;
-    margin-bottom: 5px; /* Отступ снизу */
+    margin-bottom: 5px; 
   }
   
-  /* Кнопка отправки */
   form button {
-    padding: 15px 30px; /* Увеличенные отступы */
-    background-color: #9A529B; /* Светло-розовый фон */
-    color: #FFFFFF; /* Белый текст */
-    border: none; /* Убираем рамку */
-    border-radius: 50px; /* Скругление углов */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Указываем, что это кнопка */
-    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+    padding: 15px 30px; 
+    background-color: #9A529B; 
+    color: #FFFFFF; 
+    border: none; 
+    border-radius: 50px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
   }
   
-  /* Кнопка при наведении */
   form button:hover {
-    background-color: #dfa1b6; /* Более светлый розовый цвет */
+    background-color: #dfa1b6; 
   }
   
-  /* Ошибки валидации */
   .error {
-    color: red; /* Красный текст */
-    font-size: 12px; /* Размер шрифта */
-    margin-top: -10px; /* Сдвигаем ошибку ближе к полю */
-    text-align: left; /* Ошибка выровнена слева */
+    color: red; 
+    font-size: 12px; 
+    margin-top: -10px; 
+    text-align: left; 
   }
   

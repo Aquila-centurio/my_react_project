@@ -1,18 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import image from '../../../img/product.jpg'; // Путь к картинке
 import './product.css';
 
 const Product = () => {
+  const sectionRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
   const handleScroll = (event) => {
-    event.preventDefault(); // Предотвращает стандартное поведение ссылки
+    event.preventDefault(); 
     const orderSection = document.getElementById('order');
     if (orderSection) {
       orderSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true); 
+        }
+      },
+      {
+        threshold: 0.5, 
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="product" className="product">
+    <section
+      id="product"
+      className={`product ${isInView ? 'visible' : ''}`}
+      ref={sectionRef}
+    >
       <div className="left-container">
         <img src={image} alt="Описание изображения" />
       </div>
