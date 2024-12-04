@@ -9,6 +9,7 @@ import Order from './components/sections/order/order';
 import Reviews from './components/sections/reviews/reviews';
 import Contacts from './components/sections/contacts/contacts';
 import Footer from './components/sections/footer/footer';
+import Galery from './components/sections/galery/Galery';
 
 
 
@@ -22,6 +23,7 @@ class App extends Component {
           <About />
           <OurAdvantages />
           <Product />
+          <Galery/>
           <Order />
           <Reviews />
           <Contacts />

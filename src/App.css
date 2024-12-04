@@ -64,27 +64,57 @@
   }
 }
 
+/* Стили для мобильных экранов */
 @media (max-width: 767px) {
-
-
   .header {
-    height:250px;
-    position: relative;
+    justify-content: space-between; /* Добавляем место для кнопки-бургера */
+    height: 40px; 
     padding: 10px;
-   
   }
 
-  .nav {
-    flex-direction: column; 
+  .burger {
+    display: block; /* Показываем кнопку только на мобильных */
+    background: none;
+    border: none;
+    color: #FFDC92;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .navigate {
+    display: none; /* Меню скрыто изначально */
+    flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #9A529B;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .navigate.open {
+    display: flex; /* Показываем меню, если добавлен класс open */
   }
 
   .nav-list {
-    flex-direction: column; 
-    gap: 20px; 
+    flex-direction: column;
+    gap: 20px;
   }
 
   .nav-list li {
-    font-size: 16px; 
+    font-size: 16px;
+  }
+}
+
+/* Скрытие кнопки-бургера на экранах больше 767px */
+@media (min-width: 768px) {
+  .burger {
+    display: none; /* Кнопка отсутствует */
+  }
+
+  .navigate {
+    display: flex; /* Меню всегда отображается */
   }
 }

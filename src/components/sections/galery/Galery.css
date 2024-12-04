@@ -1,0 +1,135 @@
+/* Основной стиль галереи */
+.gallery {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e4c4e5; /* Розовый фон */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Анимация для заголовка */
+.gallery-title {
+    font-size: 32px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    color: #181817; /* Белый цвет */
+    margin-bottom: 20px; /* Отступ ниже */
+    text-align: center; /* Центрирование текста */
+    transition: margin 0.3s ease; /* Плавный переход для margin */
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Галерея */
+.gallery-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 9/8; /* Прямоугольник фиксированного соотношения */
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинки обрезаются под прямоугольник */
+    animation: zoomIn 2s ease-out;
+}
+
+/* Стрелки */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Анимация для появления стрелок */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Анимация для появления заголовка */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для изображения */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Адаптивные стили */
+@media (min-width: 768px) {
+    .gallery-title {
+        margin-top: -60px; /* Поднимаем текст выше галереи */
+        margin-bottom: 20px; /* Увеличиваем отступ снизу для большего пространства */
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-title {
+        margin-top: 0; /* Сбрасываем для мобильных */
+        margin-bottom: 20px; /* Оставляем стандартное расстояние */
+    }
+
+    .gallery-container {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        aspect-ratio: auto; /* Полноэкранное изображение */
+    }
+
+    .arrow {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+}

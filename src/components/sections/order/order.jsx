@@ -1,12 +1,13 @@
 import React from 'react';
-import './order.css'
+import './order.css';
+import 'animate.css'; // Импортируем animate.css
+
 const Order = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-   
     alert(
       `Данные заказа:\n` +
       `Имя: ${data.firstName}\n` +
@@ -20,9 +21,9 @@ const Order = () => {
   };
 
   return (
-    <section id="order" className="order">
-      <h2>Оформление заказа</h2>
-      <form onSubmit={handleSubmit}>
+    <section id="order" className="order animate__animated animate__fadeIn">
+      <h2 className="animate__animated animate__fadeIn animate__delay-1s">Оформление заказа</h2>
+      <form onSubmit={handleSubmit} className="animate__animated animate__fadeIn animate__delay-2s">
         <div>
           <label htmlFor="firstName">Имя</label>
           <input
@@ -100,7 +101,7 @@ const Order = () => {
           </select>
         </div>
 
-        <button type="submit">Оформить заказ</button>
+        <button type="submit" className="animate__animated animate__pulse animate__delay-3s">Оформить заказ</button>
       </form>
     </section>
   );

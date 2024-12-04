@@ -1,19 +1,7 @@
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 #reviews {
   height: auto;
-  background-color: #e4c4e5; 
-  color: #000; 
+  background-color: #e4c4e5;
+  color: #000;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -22,71 +10,75 @@
   justify-content: center;
 }
 
-
 #reviews h1 {
   font-size: 36px;
   color: #000;
   margin-bottom: 30px;
   text-align: center;
+  transition: margin 0.3s ease, color 0.3s ease; /* Плавное изменение отступов и цвета */
 }
 
-#review p {
+#reviews p {
   color: #000;
+  transition: opacity 0.5s ease; /* Плавное исчезновение текста */
 }
-
 
 .reviews-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 40px; 
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   justify-content: center;
   align-items: center;
-  max-width: 1000px; 
+  max-width: 1000px;
   width: 100%;
 }
-
 
 .review {
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
-  padding: 20px; 
+  padding: 20px;
   box-sizing: border-box;
-  border-radius: 10px; 
-  animation: fadeInUp 0.8s ease-out; 
+  border-radius: 10px;
+  opacity: 0; /* Начальная скрытость для анимации */
+  transform: translateY(30px); /* Начальная позиция для анимации */
+  animation: fadeInUp 1s ease-out forwards; /* Используем animation с переходом */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Плавное изменение позиции и прозрачности */
 }
 
-
 .review:nth-child(even) {
-  transform: translateY(30px); 
-  animation: fadeInUp 1s ease-out; 
+  animation: fadeInUp 1.2s ease-out forwards;
+  transform: translateY(30px);
 }
 
 .review:nth-child(odd) {
-  transform: translateY(-30px); 
-  animation: fadeInUp 1s ease-out; 
+  animation: fadeInUp 1.2s ease-out forwards;
+  transform: translateY(-30px);
+}
+
+.avatar {
+  margin-bottom: 15px;
+  font-size: 50px;
+  color: #ca29cf;
+  transition: transform 0.3s ease, color 0.3s ease; /* Плавное изменение размера и цвета */
 }
 
 #reviews button {
-  margin-top: 100px; 
-  padding: 22.5px 80px; 
-  background-color: #EB86D5; 
-  color: #fff; 
+  margin-top: 100px;
+  padding: 22.5px 80px;
+  background-color: #EB86D5;
+  color: #fff;
   border: none;
-  border-radius: 50px; 
+  border-radius: 50px;
   cursor: pointer;
   font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Плавное изменение фона и размера */
 }
 
 #reviews button:hover {
-  background-color: #F78FB3; 
+  background-color: #F78FB3;
+  transform: scale(1.1); /* Увеличение кнопки при наведении */
 }
-
-#reviews p {
-  color: #000;
-}
-
-/*------------ Модальное ----------*/
 
 .modal-overlay {
   position: fixed;
@@ -99,6 +91,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: opacity 0.3s ease; /* Плавное исчезновение оверлея */
 }
 
 .modal {
@@ -108,6 +101,9 @@
   width: 90%;
   max-width: 500px;
   text-align: center;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: modalAppear 0.5s ease-out forwards;
 }
 
 .modal h2 {
@@ -136,6 +132,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Плавное изменение фона и размера */
 }
 
 .modal-buttons .submit-button {
@@ -146,6 +143,7 @@
 
 .modal-buttons .submit-button:hover {
   background-color: #F78FB3;
+  transform: scale(1.1); /* Увеличение кнопки при наведении */
 }
 
 .modal-buttons .close-button {
@@ -156,24 +154,30 @@
 
 .modal-buttons .close-button:hover {
   background-color: #bbb;
+  transform: scale(1.1); /* Увеличение кнопки при наведении */
 }
 
+/* Анимация появления модального окна */
+@keyframes modalAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-@media (max-width: 767px) {
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
   #reviews button {
-    margin-top: 0; 
-    position: relative; 
-    align-self: center; 
+    padding: 15px 50px;
+    font-size: 14px;
   }
 
-
-  .reviews-container {
-    grid-template-columns: 1fr; 
-    gap: 20px; 
-  }
-
-  .review:nth-child(even),
-  .review:nth-child(odd) {
-    transform: none; 
+  .modal-buttons button {
+    padding: 8px 15px;
+    font-size: 14px;
   }
 }

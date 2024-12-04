@@ -1,124 +1,190 @@
-
 #contacts {
-    display: flex; 
-    height: auto; 
-  }
-  
-  .left-container {
-    flex: 1; 
-    background-color: #82497a; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
-    color: #fff;
-    
-    line-height: 1.8;
-  }
+  display: flex;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Плавное появление контейнера */
+}
 
-  .left-container h1 {
-   
-    color: #fff;
-  }
-  
-  .contact-info p {
-    margin: 10px 0;
-    color: #fff;
-  }
-  
-  .contact-info .bold {
-    font-weight: bold;
-  }
-  
-  .right-container {
-    flex: 1; 
-    background-color: #fff;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    color: #000; 
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
+.left-container {
+  flex: 1;
+  background-color: #82497a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateX(-50px); /* Начальная позиция для анимации */
+  animation: slideInLeft 1s ease-out forwards; /* Сдвиг влево */
+}
 
-  .right-container h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #000;
+.left-container h1 {
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: #fff;
+}
+
+.contact-info .bold {
+  font-weight: bold;
+}
+
+.right-container {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(50px); /* Начальная позиция для анимации */
+  animation: slideInRight 1s ease-out forwards; /* Сдвиг вправо */
+}
+
+.right-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #000;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+/* Стили формы */
+.right-container form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards; /* Плавное появление формы */
+}
+
+.right-container label {
+  margin-bottom: 15px;
+  color: #000;
+  font-size: 20px;
+}
+
+.right-container input,
+.right-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.right-container textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Стили кнопки */
+.right-container button {
+  margin-top: 20px;
+  padding: 20px 40px;
+  background-color: #EB86D5;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards; /* Плавное появление кнопки */
+}
+
+.right-container button:hover {
+  background-color: #F78FB3;
+}
+
+/* Анимации для ошибок */
+.error-input {
+  border: 2px solid red;
+  animation: shake 0.3s ease; /* Эффект тряски при ошибке */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Плавное появление контейнера */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  /* Стили формы */
-  .right-container form {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Анимация сдвига слева */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Анимация сдвига справа */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Анимация тряски для ошибок */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 767px) {
+  #contacts {
     flex-direction: column;
   }
-  
-  .right-container label {
-    margin-bottom: 15px;
-    color: #000;
-    font-size: 20px
-  }
-  
-  .right-container input,
-  .right-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  
-  .right-container textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  /* Стили кнопки */
-  .right-container button {
-    margin-top: 20px;
-    padding: 20px 40px; 
-    background-color: #EB86D5; 
-    color: #fff;
-    border: none;
-    border-radius: 50px; 
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease; 
-  }
-  
-  .right-container button:hover {
-    background-color: #F78FB3; 
-  }
-  
-  .error-input {
-    border: 2px solid red;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
-  }
-  
 
-  @media (max-width: 767px) {
-    #contacts {
-      flex-direction: column; 
-    }
-  
-    .left-container {
-      order: 1; 
-    }
-  
-    .right-container {
-      order: 2; 
-    }
+  .left-container {
+    order: 1;
   }
-  
+
+  .right-container {
+    order: 2;
+  }
+}
